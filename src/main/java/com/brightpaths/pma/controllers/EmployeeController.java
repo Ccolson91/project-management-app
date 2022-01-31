@@ -21,7 +21,7 @@ public class EmployeeController {
     @GetMapping
     public String displayEmployees(Model model) {
         List<Employee> employees = employeeRepo.findAll();
-        model.addAttribute("employees", employees);
+        model.addAttribute("employeesList", employees);
         return "employees/list-employees";
     }
 
@@ -35,7 +35,7 @@ public class EmployeeController {
     @PostMapping("/save")
     public String createEmployeeForm(Employee employee, Model model) {
         employeeRepo.save(employee);
-        return "redirect:/employees/new";
+        return "redirect:/employees";
     }
 
 }
