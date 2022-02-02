@@ -2,14 +2,13 @@ var chartData = decodeHtml(chartData);
 var chartJsonArray = JSON.parse(chartData);
 
 var arrayLength = chartJsonArray.length;
+var numericData = [];
+var labelData = [];
 
 for(let i=0; i < arrayLength; i++) {
     numericData[i] = chartJsonArray[i].value;
     labelData[i] = chartJsonArray[i].label;
 }
-
-var numericData = [];
-var labelData = [];
 
 // For a pie chart
 //var myPieChart = new Chart(ctx, {
@@ -35,7 +34,6 @@ var labelData = [];
         datasets: [{
           label: 'My First dataset',
           backgroundColor: ["#3e95cd", "8e5ea2", "#3cba9f"],
-          borderColor: 'rgb(255, 99, 132)',
           data: numericData,
         }]
       };

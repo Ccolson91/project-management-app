@@ -9,6 +9,7 @@
     <div class="container">
 
         <h3>Main Dashboard</h3>
+        <a th:text="${versionNumber}"></a>
         <hr>
 
         <h4> Current Projects </h4>
@@ -23,9 +24,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="projectStatus : ${projectStatus}">
-                        <td th:text="${projectStatus.label}"/>
-                        <td th:text="${projectStatus.value}"/>
+                    <tr th:each="singleProject : ${projectsList}">
+                        <td th:text="${singleProject.name}"/>
+                        <td th:text="${singleProject.stage}"/>
                     </tr>
                 </tbody>
             </table>

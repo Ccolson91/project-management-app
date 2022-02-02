@@ -18,6 +18,16 @@ public class EmployeeController {
     @Autowired
     EmployeeRepository employeeRepo;
 
+    // constructor injection (does not need @autowired annotation)
+//    public EmployeeController(EmployeeRepository employeeRepo) {
+//        this.employeeRepo = employeeRepo;
+//    }
+
+    @Autowired
+    public void setEmployeeRepo(EmployeeRepository employeeRepo) {
+        this.employeeRepo = employeeRepo;
+    }
+
     @GetMapping
     public String displayEmployees(Model model) {
         List<Employee> employees = employeeRepo.findAll();
